@@ -1,0 +1,23 @@
+{
+  "name": "carrygo-",
+  "version": "1.0.0",
+  "description": "carryGO! is a local courier service, that helps Nigerian citizens deliver any kinds legitimate goods from one location to another in Lagos. Soon carryGO! will expand to all part of Nigeria.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnayoOleru/carryGO-.git"
+  },
+  "keywords": [
+    "Courier",
+    "service"
+  ],
+  "author": "Anayo Oleru",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AnayoOleru/carryGO-/issues"
+  },
+  "homepage": "https://github.com/AnayoOleru/carryGO-#readme"
+}
