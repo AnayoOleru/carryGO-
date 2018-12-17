@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/AnayoOleru/carryGO-/issues"
   },
-  "homepage": "https://github.com/AnayoOleru/carryGO-#readme"
+  "homepage": "https://github.com/AnayoOleru/carryGO-#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
