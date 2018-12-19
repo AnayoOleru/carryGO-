@@ -1,5 +1,11 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
+
+//middleware to parse requests of extended urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+//middleware to parse requests of content-type - application/json
+app.use(bodyParser.json())
 
 app.get('/api/v1', (req, res) => res.status(200).send({
     status: 'Connection successful',
