@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const userRoute = require('./route/userRoute');
+
+process.env.JWT_KEY = "thisIsMyJwtKeyUsedToEncodeTheTokens";
 //middleware to parse requests of extended urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
 //middleware to parse requests of content-type - application/json
