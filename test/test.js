@@ -37,7 +37,9 @@ describe('App', () => {
           console.log(err.message);
         })
       });
+    })
 
+describe('App', () => {
   it('GET * should return 200 and message', (done) => {
     //send request to the app
     chai.request(app).get('*')
@@ -50,6 +52,6 @@ describe('App', () => {
     }).catch(err => {
       console.log(err.message);
     })
-    done();
+    // done();
   });
 })
