@@ -93,7 +93,7 @@ describe('User login', () => {
     it('should return 200 and token for valid credentials', (done) => {
       //mock invalid user input
       const valid_input = {
-        "email": "anayo@outlook.com",
+        "email": "anayo_oleru@outlook.com",
         "password": "secret"
       }
       //send request to the app
