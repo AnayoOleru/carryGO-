@@ -55,3 +55,32 @@ describe('App', () => {
     done();
   });
 })
+
+/**
+ * user registration and validation test
+ */
+describe('User registration', () => {
+
+    it('Should return 201 and confirmation for valid input', (done) => {
+      //mock valid user input
+      const new_user = {
+        "name"  : "Anayo Oleru",
+        "email": "anayo_oleru@outlook.com",
+        "password": "secret"
+      }
+      //send request to the app
+      chai.request(app).post('/auth/signup')
+        .send(new_user)
+          .then((res) => {
+            //console.log(res.body);
+            //assertions
+            expect(res).to.have.status(201);
+            expect(res.body.message).to.be.equal("User created!");
+            expect(res.body.errors.length).to.be.equal(0);
+            done();
+          }).catch(err => {
+            console.log(err.message);
+          })
+    });
+  
+  })
