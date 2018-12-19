@@ -85,3 +85,30 @@ describe('User registration', () => {
     });
   
   })
+/**
+ * POST /auth/login
+ * user login and validation(not yet)
+ */
+describe('User login', () => {
+    it('should return 200 and token for valid credentials', (done) => {
+      //mock invalid user input
+      const valid_input = {
+        "email": "anayo@outlook.com",
+        "password": "secret"
+      }
+      //send request to the app
+      chai.request(app).post('/auth/login')
+        .send(valid_input)
+          .then((res) => {
+            //console.log(res.body);
+            //assertions
+            expect(res).to.have.status(200);
+            expect(res.body.token).to.exist;
+            expect(res.body.message).to.be.equal("Auth OK");
+            expect(res.body.errors.length).to.be.equal(0);
+            done();
+          }).catch(err => {
+            console.log(err.message);
+          })
+    });
+  });
