@@ -15,3 +15,5 @@ app.get('*', (req, res) =>{
   app.listen(3000, () =>{
       console.log('Uh...yes, server has started, now make your request');
   })
+
+  module.exports = app;
