@@ -52,6 +52,6 @@ describe('App', () => {
     }).catch(err => {
       console.log(err.message);
     })
-    // done();
+    done();
   });
 })
