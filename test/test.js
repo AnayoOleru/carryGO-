@@ -81,6 +81,7 @@ describe('User registration', () => {
           }).catch(err => {
             console.log(err.message);
           })
+          done();
     });
   
   })
