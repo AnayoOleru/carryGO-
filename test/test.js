@@ -1,3 +1,4 @@
+// checks if mocha is installed and working fine
 const assert = require('assert');
 describe('Array', function() {
   describe('#indexOf()', function() {
@@ -6,3 +7,18 @@ describe('Array', function() {
     });
   });
 });
+
+/**
+ * Basic tests for Auth system API
+ * test if server or this very app exist
+ */
+// const chai = require('chai');
+// const expect = chai.expect;
+
+// //start app
+// const app = require('../app');
+
+// describe('App', () => {
+//   it('Should exists', () => {
+//     expect(app).to.be.a('function');})
+// })
