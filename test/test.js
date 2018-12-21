@@ -75,15 +75,15 @@ describe('User registration', () => {
             //console.log(res.body);
             //assertions
             expect(res).to.have.status(201);
-            expect(res.body.message).to.be.equal("User created!");
+            expect(token).to.exist;
             expect(res.body.errors.length).to.be.equal(0);
+            expect(res.body.user.password).to.not.be.eql(user_input.password);
             done();
           }).catch(err => {
             console.log(err.message);
           })
           done();
     });
-  
   })
 /**
  * POST /auth/login
@@ -104,11 +104,12 @@ describe('User login', () => {
             //assertions
             expect(res).to.have.status(200);
             expect(res.body.token).to.exist;
-            expect(res.body.message).to.be.equal("Auth OK");
             expect(res.body.errors.length).to.be.equal(0);
+            expect(res.body.user.password).to.not.be.eql(valid_input.password);
             done();
           }).catch(err => {
             console.log(err.message);
           })
+          done();
     });
   });

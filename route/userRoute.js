@@ -44,7 +44,7 @@ if (!req.body.name || !req.body.email || !req.body.password) {
     const { rows } = await db.query(createQuery, values);
     const token = Helper.generateToken(rows[0].id);
     return res.status(201).send({ token });
-  } catch(error) {
+  } catch(error) { //if the email exist in the datbase
     if (error.routine === '_bt_check_unique') {
       return res.status(400).send({ 'message': 'User with that EMAIL already exist' })
     }
