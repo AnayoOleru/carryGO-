@@ -2,12 +2,14 @@ const moment = require('moment');
 const uuidv4 = require('uuid/v4');
 const db = require('../dbquery/dbquery');
 const Helper = require('../jwt/Helper');
+require('babel-polyfill');
 
 const express = require('express');
 //create the express router that will have all endpoints
 const router = express.Router();
 
 /**
+ * register user
  * /api/v1/auth/signup
  * exports an express router.
  */ 

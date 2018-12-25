@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const userRoute = require('./route/userRoute');
+const packageRoute = require('./route/packageRoute');
+const packEnd = require('./packageEndpoints/packEnd');
+const Auth = require('./authentication/Auth');
 
 // process.env.JWT_KEY = "thisIsMyJwtKeyUsedToEncodeTheTokens";
 //middleware to parse requests of extended urlencoded
@@ -10,6 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
 
 app.use('/api/v1', userRoute);
+app.use('/api/v1', packEnd);
 
 app.get('/api/v1', (req, res) => res.status(200).send({
     status: 'Connection successful',
@@ -23,7 +27,7 @@ app.get('*', (req, res) =>{
 
 
   app.listen(3000, () =>{
-      console.log('Uh...yes, server has started, now make your request');
+      console.log('Uh...yes, server has started on localhost:3000, now make your request');
   })
 
   module.exports = app;
