@@ -24,7 +24,7 @@ const createPackageTable = () => {
       sender_telephone VARCHAR(128) NOT NULL,
       sender_address VARCHAR(128) NOT NULL,
       receiver_name VARCHAR(128) NOT NULL,
-      reciever_telephone VARCHAR(128) NOT NULL,
+      receiver_telephone VARCHAR(128) NOT NULL,
       destination VARCHAR(128) NOT NULL,
       no_of_packages VARCHAR(128) NOT NULL,
       total_weight VARCHAR(128) NOT NULL,

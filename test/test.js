@@ -29,7 +29,7 @@ describe('App', () => {
         chai.request(app).get('/api/v1')
           .then((res) => {
             //assertions
-            //console.log(res.body);
+            // console.log(res.body);
             expect(res).to.have.status(200, 'Connection successful');
             expect(res.body.message).to.contain('Welcome to carryGO!');
             done();
@@ -113,3 +113,37 @@ describe('User login', () => {
           done();
     });
   });
+
+  /**
+ * POST /auth/login
+ * user login and validation(not yet)
+ */
+describe('Create a new package', () => {
+  it('should return 201 and rows', (done) => {
+    //mock invalid user input
+    const valid_input = {
+      "sender_name": "Anayo Oleru",
+      "sender_telephone":"07069583654",
+      "sender_address":"no.88A",
+      "receiver_name":"Nonso",
+      "reciever_telephone":"08090786543",
+      "reciever_address": "happy street northumber",
+      "no_of_packages":"3",
+      "total_weight": "3kg",
+      "description_of_goods": "dodument",
+    }
+    //send request to the app
+    chai.request(app).post('/packages')
+      .send(valid_input)
+        .then((res) => {
+          console.log(res.body);
+          //assertions
+          expect(res).to.have.status(201);
+          expect(res).to.be.equal(rows[0]);;
+          expect(res.body.errors.length).to.be.equal(0);
+          done();
+        }).catch(err => {
+          console.log(err.message);
+        })
+  });
+});
